@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracking - Mental Wellness Assistant</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/mood.css}">
+</head>
+<body>
+  <header>
+        <div class="logo">🧠 WellnessAI</div>
+        <nav>
+            <a th:href="@{/dashboard}">Dashboard</a>
+            <form th:action="@{/logout}" method="post" style="display: inline;">
+                <button type="submit" class="logout-button">Logout</button>
+            </form>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Track Your Mood</h1>
+        <form th:action="@{/mood}" method="post" class="mood-form">
+            <div>
+                <label><input type="radio" name="moodLevel" value="1" required> 😔 </label>
+                <label><input type="radio" name="moodLevel" value="2" required> 😕 </label>
+                <label><input type="radio" name="moodLevel" value="3" required> 😐 </label>
+                <label><input type="radio" name="moodLevel" value="4" required> 🙂 </label>
+                <label><input type="radio" name="moodLevel" value="5" required> 😄 </label>
+            </div>
+            <button type="submit">Save Mood</button>
+        </form>
+
+        <div class="entries">
+            <div th:each="entry : ${entries}" class="entry">
+                <span th:text="${#temporals.format(entry.entryDate, 'dd MMM yyyy')}"></span>
+                <span th:switch="${entry.moodLevel}">
+                    <span th:case="1">😔</span>
+                    <span th:case="2">😕</span>
+                    <span th:case="3">😐</span>
+                    <span th:case="4">🙂</span>
+                    <span th:case="5">😄</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

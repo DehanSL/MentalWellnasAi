@@ -1,0 +1,148 @@
+/* General styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3fdfc;
+    color: #333;
+}
+
+/* Header and Footer */
+header {
+    background: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2d9c8b;
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #2d9c8b;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #ffffff;
+    border-top: 1px solid #eaeaea;
+    margin-top: 50px;
+}
+
+/* Common components */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2d9c8b;
+}
+
+.card, .feature-card, .entry {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover, .feature-card:hover, .entry:hover, .tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #2d9c8b;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #258a7b;
+}
+
+/* Page-specific styles that might be reusable */
+
+/* Dashboard */
+.hero {
+    background: linear-gradient(to right, #e0f7f4, #d3f4f1);
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.hero .buttons a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    background: #2d9c8b;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.hero .buttons a:hover {
+    background: #258a7b;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 50px 20px;
+}
+
+.feature-card {
+    text-align: center;
+}
+
+.feature-card h3 {
+    margin: 10px 0;
+    color: #2d9c8b;
+}
+
+
+
+
+

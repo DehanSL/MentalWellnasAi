@@ -1,0 +1,14 @@
+.admin-header, .admin-btn {
+    background-color: #2563eb !important;
+    color: #fff !important;
+}
+.admin-header nav a {
+    color: #fff !important;
+    margin-left: 1rem;
+}
+.container {
+    border: 2px solid #2563eb;
+    margin-top: 2rem;
+    padding: 2rem;
+    border-radius: 8px;
+}

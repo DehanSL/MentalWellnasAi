@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mental Wellness Assistant</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <link rel="stylesheet" th:href="@{/css/index.css}">
+</head>
+<body>
+  <header>
+    <div class="logo">🧠 WellnessAI</div>
+    <nav>
+    <a th:href="@{/}">Home</a>
+    <a href="#features">Features</a>
+    <a th:href="@{/login}">Login</a>
+    <a th:href="@{/register}">Register</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Track your mood. Heal your mind.</h1>
+    <p>Your AI-powered companion for mental wellness, journaling, and emotional support.</p>
+    <div class="buttons">
+      <a th:href="@{/login}">Start Journaling</a>
+      <a href="#features">Learn More</a>
+    </div>
+  </section>
+
+  <section class="mental-health-info">
+    <div class="info-content">
+      <h2>What is Mental Health?</h2>
+      <p>Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act. It also helps determine how we handle stress, relate to others, and make healthy choices. Mental health is important at every stage of life, from childhood and adolescence through adulthood.</p>
+    </div>
+    <div class="info-image">
+      <img th:src="@{/images/mental-health-illustration.png}" alt="Mental Health Illustration">
+    </div>
+  </section>
+
+  <div class="heel-image-wrapper">
+    <img th:src="@{/images/heel.jpg}" alt="Healing Illustration" class="heel-image">
+  </div>
+
+  <section class="explore" id="explore">
+    <div class="category">
+      <h2>Features</h2>
+      <div class="features" id="features">
+        <div class="feature-card">
+          <h3>📒 Journaling</h3>
+          <p>Write daily reflections and let AI find patterns.</p>
+        </div>
+        <div class="feature-card">
+          <h3>📊 Mood Tracking</h3>
+          <p>Log how you feel and track your mental state over time.</p>
+        </div>
+        <div class="feature-card">
+          <h3>🤖 AI Insights</h3>
+          <p>Get intelligent suggestions based on your entries.</p>
+        </div>
+        <div class="feature-card">
+          <h3>📈 Daily Reports</h3>
+          <p>See your progress with visual summaries and reports.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h2>Healthy Tips</h2>
+      <div class="health-tips">
+        <div class="tip-card">
+          <h3>🧘‍♀️ Practice Mindfulness</h3>
+          <p>Engage in daily meditation to reduce stress and improve focus. Even a few minutes a day can make a big difference.</p>
+        </div>
+        <div class="tip-card">
+          <h3>🥗 Nourish Your Body</h3>
+          <p>A balanced diet rich in fruits, vegetables, and whole grains can positively impact your mood and energy levels.</p>
+        </div>
+        <div class="tip-card">
+          <h3>🏃‍♀️ Stay Active</h3>
+          <p>Regular physical activity is a powerful mood booster. Find an activity you enjoy and make it a part of your routine.</p>
+        </div>
+        <div class="tip-card">
+          <h3>💬 Connect with Others</h3>
+          <p>Social connection is vital for mental well-being. Reach out to friends, family, or a support group.</p>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <div class="category">
+      <h2>More Resource</h2>
+        <div class="last-image-wrapper">
+    <img th:src="@{/images/last.jpg}" alt="Last Illustration" class="last-image">
+  </div>
+      <div class="more-resources">
+        <p>Explore the resources for more information on mental wellness.</p>
+        <ul>
+          <li><a href="https://www.who.int/health-topics/mental-health" target="_blank">World Health Organization - Mental Health</a></li>
+          <!-- <li><a href="https://www.youtube.com/watch?v=O-6f5wQXSu8" target="_blank">Guided Meditation for Positive Energy (YouTube)</a></li> -->
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Mental Wellness Assistant. All rights reserved.</p>
+  </footer>
+</body>
+</html>

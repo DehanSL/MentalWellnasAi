@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mental Wellness Assistant - Dashboard</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <link rel="stylesheet" th:href="@{/css/dashboard.css}">
+</head>
+<body>
+  <header>
+    <div class="logo">🧠 WellnessAI</div>
+    <nav>
+      <a th:href="@{/}">Home</a>
+      <a href="#features">Features</a>
+      <form th:action="@{/logout}" method="post" style="display: inline;">
+        <button type="submit" class="logout-button">Logout</button>
+      </form>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Welcome, <span th:text="${user.fullName}">User</span>!</h1>
+    <p>Your AI-powered companion for mental wellness, journaling, and emotional support is ready.</p>
+    <!-- <div class="buttons">
+      <a th:href="@{/journal}">Start Journaling</a>
+      <a href="#features">Learn More</a>
+    </div> -->
+  </section>
+
+  <section class="features" id="features">
+    <div class="feature-card">
+      <h3>📒 Journaling</h3>
+      <p>Write daily reflections and let AI find patterns.</p>
+      <a th:href="@{/journal}" class="btn">Start Journaling</a>
+    </div>
+    <div class="feature-card">
+      <h3>📊 Mood Tracking</h3>
+      <p>Log how you feel and track your mental state over time.</p>
+      <a th:href="@{/mood}" class="btn">Track Mood</a>
+    </div>
+    <div class="feature-card">
+      <h3>🤖 AI Insights</h3>
+      <p>Get intelligent suggestions based on your entries.</p>
+      <a th:href="@{/insights}" class="btn">View Insights</a>
+    </div>
+    <div class="feature-card">
+      <h3>📈 Daily Reports</h3>
+      <p>See your progress with visual summaries and reports.</p>
+      <a th:href="@{/insights}" class="btn">View Reports</a>
+    </div>
+    <div class="feature-card">
+      <h3>💬 AI Chatbot </h3>
+      <p>Talk to our AI chatbot for mental health support and guidance.</p>
+      <a th:href="@{/chat}" class="btn">Start Chatting</a>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 Mental Wellness Assistant. All rights reserved.</p>
+  </footer>
+<!-- <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('loginSuccess')) {
+        alert('Login successful!');
+    }
+</script> -->
+</body>
+</html>

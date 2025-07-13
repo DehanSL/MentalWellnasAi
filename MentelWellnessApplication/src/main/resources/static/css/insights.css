@@ -1,0 +1,46 @@
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.card h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.card p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+#moodChart {
+    max-width: 100%;
+    margin-top: 1rem;
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+     margin-left: 12px;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+}
+.logout-button:hover {
+    color: #2d9c8b;
+}

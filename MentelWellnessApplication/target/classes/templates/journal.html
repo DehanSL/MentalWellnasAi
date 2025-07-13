@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal - Mental Wellness Assistant</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/journal.css}">
+</head>
+<body>
+  <header>
+        <div class="logo">🧠 WellnessAI</div>
+        <nav>
+            <a th:href="@{/dashboard}">Dashboard</a>
+            <form th:action="@{/logout}" method="post" style="display: inline;">
+                <button type="submit" class="logout-button">Logout</button>
+            </form>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>My Journal</h1>
+        <form th:action="@{/journal}" method="post" class="journal-form">
+            <textarea name="content" placeholder="How are you feeling today?" required></textarea>
+            <button type="submit">Save Entry</button>
+        </form>
+
+        <div class="entries">
+            <div th:each="entry : ${entries}" class="entry">
+                <p class="entry-date" th:text="${#temporals.format(entry.createdAt, 'dd MMM yyyy, HH:mm')}"></p>
+                <p th:text="${entry.content}"></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

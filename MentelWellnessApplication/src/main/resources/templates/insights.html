@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights - Mental Wellness Assistant</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/insights.css}">
+</head>
+<body>
+  <header>
+        <div class="logo">🧠 WellnessAI</div>
+        <nav>
+            <a th:href="@{/dashboard}">Dashboard</a>
+            <form th:action="@{/logout}" method="post" style="display: inline;">
+                <button type="submit" class="logout-button">Logout</button>
+            </form>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Insights & Reports</h1>
+
+        <div class="card">
+            <h2>Journaling Insights</h2>
+            <p>Total Entries: <span th:text="${totalJournalEntries}">0</span></p>
+            <p>Total Words: <span th:text="${totalWords}">0</span></p>
+        </div>
+
+        <div class="card">
+            <h2>Mood Report</h2>
+            <canvas id="moodChart"></canvas>
+        </div>
+    </div>
+
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        const moodEntries = /*[[${moodEntries}]]*/ [];
+        const labels = moodEntries.map(entry => new Date(entry.entryDate).toLocaleDateString());
+        const data = moodEntries.map(entry => entry.moodLevel);
+
+        new Chart(document.getElementById('moodChart'), {
+            type: 'line',
+            data: {
+                labels: labels.reverse(),
+                datasets: [{
+                    label: 'Mood Level',
+                    data: data.reverse(),
+                    borderColor: '#2d9c8b',
+                    tension: 0.1
+                }]
+            }
+        });
+        /*]]>*/
+    </script>
+</body>
+</html>

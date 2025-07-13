@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/chat.css}">
+</head>
+<body>
+    <header>
+        <div class="logo">🧠 WellnessAI</div>
+        <nav>
+            <a th:href="@{/dashboard}">Dashboard</a>
+            <form th:action="@{/logout}" method="post" style="display: inline;">
+                <button type="submit" class="logout-button">Logout</button>
+            </form>
+        </nav>
+    </header>
+
+    <main class="chat-container">
+        <h1>AI Chat</h1>
+        <div class="chat-box" id="chatBox"></div>
+        <div class="chat-input">
+            <input id="userInput" placeholder="How are you feeling today?" />
+            <button onclick="send()">Send</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mental Wellness Assistant. All rights reserved.</p>
+    </footer>
+
+    <script>
+        async function send() {
+            const userInput = document.getElementById('userInput');
+            const chatBox = document.getElementById('chatBox');
+            const prompt = userInput.value;
+
+            if (prompt.trim() === "") return;
+
+            const userMessage = document.createElement('div');
+            userMessage.className = 'chat-message user';
+            userMessage.innerText = prompt;
+            chatBox.appendChild(userMessage);
+
+            userInput.value = '';
+
+            const response = await fetch(`/ai/chat?message=${prompt}`);
+            const data = await response.json();
+
+            const botMessage = document.createElement('div');
+            botMessage.className = 'chat-message bot';
+            botMessage.innerText = data.generation;
+            chatBox.appendChild(botMessage);
+
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    </script>
+</body>
+</html>

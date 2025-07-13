@@ -1,0 +1,81 @@
+.container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.mood-form div {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.mood-form label {
+    cursor: pointer;
+    font-size: 2.5rem;
+    transition: transform 0.2s;
+}
+
+.mood-form label:hover {
+    transform: scale(1.2);
+
+}
+
+
+.mood-form input[type="radio"] {
+    display: none;
+}
+
+.mood-form input[type="radio"]:checked + span {
+    display: inline-block;
+    transform: scale(1.2);
+    filter: saturate(1.5);
+}
+
+.mood-form button {
+    padding: 0.75rem 2rem;
+    border: none;
+    background-color: #2d9c8b;
+    color: white;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.entries {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.entry {
+    background-color: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.entry span:last-child {
+    font-size: 1.5rem;
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+     margin-left: 12px;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+}
+.logout-button:hover {
+    color: #2d9c8b;
+}

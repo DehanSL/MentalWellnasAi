@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Mental Wellness Assistant</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/Login.css}">
+</head>
+<body>
+    <header>
+        <div class="logo">🧠 WellnessAI</div>
+        <nav>
+            <a th:href="@{/}">Home</a>
+            <a th:href="@{/register}">Register</a>
+        </nav>
+    </header>
+    <div class="container">
+        <section class="auth-forms" id="login">
+            <h1>Login</h1>
+            
+            <div th:if="${param.error}" style="color: red; text-align: center; margin-bottom: 15px;">
+                Invalid email or password
+            </div>
+            
+            <form th:action="@{/login}" method="post" autocomplete="off">
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                <input type="email" name="email" placeholder="Email" required autocomplete="off">
+                <input type="password" name="password" placeholder="Password" required autocomplete="new-password">
+                <button type="submit">Login</button>
+            </form>
+            <img th:src="@{/images/login.jpg}" alt="Login Illustration" class="login-image">
+        </section>
+    </div>
+<!-- <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('registered')) {
+        alert('Registration successful! Please log in.');
+    }
+</script> -->
+</body>
+</html>
